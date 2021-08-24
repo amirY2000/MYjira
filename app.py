@@ -1,9 +1,9 @@
 #MYjira!
-import tkinter as tk
+from tkinter import *
 from layout import MYjira
 
 def main():
-    app = tk.Tk()
+    app = Tk()
     app.title("MYjira")
     #app.iconbitmap("C:\Users\amira\OneDrive\Desktop\MYjira\icon.png")
     e = MYjira(app)
