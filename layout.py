@@ -1,4 +1,6 @@
 from tkinter import *
+
+from wx.core import Left
 class MYjira():
     def __init__(self, root):
         background= Frame(root, bg="#38BEA6")#green background
@@ -23,6 +25,12 @@ class MYjira():
         done_label = Label(done_frame, text="Done", bg="#AFF4B4")
         done_label.config(font=(44))
         done_label.pack()
+
+        newTask = Button(frame, text="New Task", padx=20, pady=10)
+        newTask.place(x=248, y=775)
+
+        clearTasks = Button(frame, text="Clear", padx = 20, pady=10)
+        clearTasks.place(x=1152, y=775)
 
 
         
