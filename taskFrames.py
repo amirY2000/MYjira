@@ -25,3 +25,9 @@ class done():
         done_label = Label(done_frame, text="Done", bg="#AFF4B4")
         done_label.config(font=(44))
         done_label.pack()
+
+class stickNotes():
+    def __init__(self,frame):
+        stickNote = Frame(frame, bg="white")
+        stickNote.grid(ipadx=10, ipady=10)
+        

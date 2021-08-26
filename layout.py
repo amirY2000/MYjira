@@ -7,18 +7,33 @@ class MYjira():
         background= Frame(root, bg="#38BEA6")#green background
         background.place(relheight=1, relwidth=1)
 
-        frame = Frame(background, bg="white")#white sheet where we work on
-        frame.place(relheight=0.8,relwidth=0.8, relx=0.1, rely=0.1)
+        self.frame = Frame(background, bg="white")#white sheet where we work on
+        self.frame.place(relheight=0.8,relwidth=0.8, relx=0.1, rely=0.1)
 
-        toDo_frame = toDo(frame)
-        inProgress_frame = inProgress(frame)
-        done_frame = done(frame)
+        toDo_frame = toDo(self.frame)
+        inProgress_frame = inProgress(self.frame)
+        done_frame = done(self.frame)
 
-        newTask = Button(frame, text="New Task", padx=20, pady=10)
+        newTask = Button(self.frame, text="New Task", padx=20, pady=10, command=self.newTask_command)
         newTask.place(x=248, y=775)
 
-        clearTasks = Button(frame, text="Clear", padx = 20, pady=10)
+        clearTasks = Button(self.frame, text="Clear", padx = 20, pady=10)
         clearTasks.place(x=1152, y=775)
 
+    def newTask_command(self):
+        popUp = Toplevel(self.frame)
+        popUp.title("Task Description")
+        popUp.geometry("400x275")
+        popUp.config(bg="#38A1C5")
 
-        
+        description = Text(popUp, width=40, height=10, font=("Helvetica"))
+        description.pack(pady=20)
+
+        buttonFrame = Frame(popUp, bg="#38A1C5")
+        buttonFrame.pack()
+
+        saveButton = Button(buttonFrame, text="Save")
+        saveButton.grid(row=0, column=0, padx=50, ipadx=20)
+
+        cancelButton = Button(buttonFrame, text="Cancel", command=popUp.destroy)
+        cancelButton.grid(row=0, column=1, padx=50, ipadx=20)
