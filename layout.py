@@ -1,5 +1,5 @@
 #Overall layout
-from tkinter import *
+from tkinter import font
 from taskFrames import *
 
 class MYjira():
@@ -21,19 +21,4 @@ class MYjira():
         clearTasks.place(x=1152, y=775)
 
     def newTask_command(self):
-        popUp = Toplevel(self.frame)
-        popUp.title("Task Description")
-        popUp.geometry("400x275")
-        popUp.config(bg="#38A1C5")
-
-        description = Text(popUp, width=40, height=10, font=("Helvetica"))
-        description.pack(pady=20)
-
-        buttonFrame = Frame(popUp, bg="#38A1C5")
-        buttonFrame.pack()
-
-        saveButton = Button(buttonFrame, text="Save")
-        saveButton.grid(row=0, column=0, padx=50, ipadx=20)
-
-        cancelButton = Button(buttonFrame, text="Cancel", command=popUp.destroy)
-        cancelButton.grid(row=0, column=1, padx=50, ipadx=20)
+        popUp = newTask(self.frame)
